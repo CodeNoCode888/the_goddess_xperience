@@ -2,62 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Goddess Xperience</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
-
 <body>
 
-  <header>
-    <h1>The Goddess Xperience</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#xperience">Xperience</a></li>
-        <li><a href="#packages">Packages</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#apply">Apply</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section id="home">
-    <h2>Enter the Realm of the Goddess</h2>
-    <img src="hero-banner.jpg" alt="Hero Banner" class="hero-banner">
-    <p>Where your Xperience begins...</p>
+  <!-- Hero Section -->
+  <section class="section hero" id="hero" data-aos="fade-up">
+    <div class="container">
+      <h1 class="title">Welcome to The Goddess Xperience</h1>
+      <p class="subtitle">Unlock your divine potential.</p>
+    </div>
   </section>
 
-  <section id="xperience">
-    <h2>Welcome to the Ultimate Xperience</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et pulvinar elit, at sagittis lorem.</p>
+  <!-- Experience Section -->
+  <section class="section experience" id="experience" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section-title">The Experience</h2>
+      <p class="section-text">Sample text about the services offered here. You can customize this later as needed.</p>
+    </div>
   </section>
 
-  <section id="packages">
-    <h2>Packages</h2>
-    <p>Choose from our exquisite offerings designed to elevate your journey.</p>
-    <img src="packages.jpg" alt="Packages" class="packages-img">
+  <!-- Pricing Section -->
+  <section class="section pricing" id="pricing" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section-title">Pricing</h2>
+      <div class="card-grid">
+        <div class="card" data-aos="zoom-in">
+          <h3>Basic</h3>
+          <p>$100/session</p>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="100">
+          <h3>Premium</h3>
+          <p>$250/session</p>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="200">
+          <h3>Elite</h3>
+          <p>$500/session</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="about">
-    <h2>About The Goddess</h2>
-    <p>A majestic presence, unparalleled in grace and power. Embark on a path of true devotion.</p>
-    <video controls>
-      <source src="about-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+  <!-- Contact Section -->
+  <section class="section contact" id="contact" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-text">Email: goddess@example.com</p>
+    </div>
   </section>
 
-  <section id="apply">
-    <h2>Apply for Your Xperience</h2>
-    <p>Submit your application and begin your transformation today.</p>
-    <a href="#apply-form" class="apply-button">Apply Now</a>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 The Goddess Xperience</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
