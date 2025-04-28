@@ -1,81 +1,84 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #000;
-    color: #fff;
-    scroll-behavior: smooth;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #0d0d0d;
+  color: #f5f5f5;
+  scroll-behavior: smooth;
 }
 
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 1200px;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.8em;
-    font-weight: bold;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-    color: gold;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
 .section {
-    text-align: center;
-    padding: 80px 20px;
+  padding: 6rem 0;
+  transition: background-color 1s ease;
 }
 
-.hero-image {
-    width: 80%;
-    max-width: 700px;
-    margin: 20px 0;
-    border-radius: 10px;
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-.footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #111;
-    font-size: 0.9em;
+.section-text {
+  font-size: 1.2rem;
+  opacity: 0.8;
 }
 
-/* Animations */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards;
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.card {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 250px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  opacity: 0.7;
+}
+
+/* Background fade effect */
+.section:nth-child(even) {
+  background-color: #111111;
+}
+
+.section:nth-child(odd) {
+  background-color: #0d0d0d;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .card-grid {
+    flex-direction: column;
+    align-items: center;
+  }
 }
