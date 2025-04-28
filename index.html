@@ -1,45 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Goddess Xperience</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
-</head>
-<body>
-
-<header class="header">
-  <h1 class="logo">The Goddess Xperience</h1>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="experience.html">Xperience</a></li>
-      <li><a href="packages.html">Packages</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="apply.html">Apply</a></li>
-    </ul>
-  </nav>
-</header>
-
-<section class="hero">
-  <!-- Upload banner image as 'banner1.jpg' in media folder -->
-  <img src="media/banner1.jpg" alt="Hero Banner" class="hero-image">
-  <div class="hero-text">
-    <h2>Enter the Realm of the Goddess</h2>
-    <p>Where your Xperience begins...</p>
-  </div>
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Goddess Xperience</title>
+    <link rel="stylesheet" href="style.css">
+</head><body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">The Goddess Xperience</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#xperience">Xperience</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#apply">Apply</a></li>
+            </ul>
+        </nav>
+    </header><section id="home" class="section hero">
+    <h1 class="fade-in">Enter the Realm of the Goddess</h1>
+    <img src="media/hero-banner.jpg" alt="Hero Banner" class="hero-image fade-in"> <!-- Upload your image as hero-banner.jpg -->
+    <p class="fade-in">Where your Xperience begins...</p>
 </section>
 
-<section class="intro">
-  <h2>Welcome to the Ultimate Xperience</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-     Curabitur et pulvinar elit, at sagittis lorem.</p>
+<section id="xperience" class="section">
+    <h2 class="fade-in">Welcome to the Ultimate Xperience</h2>
+    <p class="fade-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et pulvinar elit, at sagittis lorem.</p>
+</section>
+
+<section id="packages" class="section">
+    <h2 class="fade-in">Packages</h2>
+    <p class="fade-in">Choose from our exquisite offerings designed to elevate your journey.</p>
+    <img src="media/packages-image.jpg" alt="Packages" class="fade-in"> <!-- Upload your image as packages-image.jpg -->
+</section>
+
+<section id="about" class="section">
+    <h2 class="fade-in">About The Goddess</h2>
+    <p class="fade-in">A majestic presence, unparalleled in grace and power. Embark on a path of true devotion.</p>
+    <video class="fade-in" controls>
+        <source src="media/about-video.mp4" type="video/mp4"> <!-- Upload your video as about-video.mp4 -->
+        Your browser does not support the video tag.
+    </video>
+</section>
+
+<section id="apply" class="section">
+    <h2 class="fade-in">Apply for Your Xperience</h2>
+    <p class="fade-in">Fill out the application to begin your journey into the extraordinary.</p>
 </section>
 
 <footer class="footer">
-  <p>© 2025 The Goddess Xperience</p>
+    <p>© 2025 The Goddess Xperience</p>
 </footer>
 
-</body>
-</html>
+<script src="script.js"></script>
+
+</body></html>
