@@ -1,21 +1,19 @@
 
-// Smooth Scroll on load
-document.addEventListener('DOMContentLoaded', function () {
-  const sections = document.querySelectorAll('section');
+// This script delays the fade-in animations nicely as you scroll
+const faders = document.querySelectorAll('.fade-in');
 
-  const options = {
-    threshold: 0.5
-  };
+const appearOptions = {
+    threshold: 0.1,
+};
 
-  const observer = new IntersectionObserver(function(entries, observer){
+const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
     entries.forEach(entry => {
-      if(entry.isIntersecting){
+        if (!entry.isIntersecting) return;
         entry.target.classList.add('appear');
-      }
+        appearOnScroll.unobserve(entry.target);
     });
-  }, options);
+}, appearOptions);
 
-  sections.forEach(section => {
-    observer.observe(section);
-  });
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
 });
