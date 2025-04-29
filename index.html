@@ -1,54 +1,56 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Goddess Xperience</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
+    :root {
+      --main-bg: #0a0a0a;
+      --accent: crimson;
+      --text-light: #fff;
     }
-    html, body {
+
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #000;
-      color: #fff;
+      box-sizing: border-box;
       scroll-behavior: smooth;
     }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--main-bg);
+      color: var(--text-light);
+    }
+
     nav {
       position: fixed;
       top: 0;
       right: 0;
-      width: 100%;
       display: flex;
-      justify-content: flex-end;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 15px 30px;
+      gap: 20px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
       z-index: 1000;
     }
+
     nav a {
-      color: #fff;
+      color: var(--text-light);
       text-decoration: none;
-      margin-left: 30px;
-      font-weight: 600;
-      transition: color 0.3s;
+      font-weight: bold;
     }
-    nav a:hover {
-      color: crimson;
-    }
-    section {
-      padding: 100px 20px;
-    }
+
     .home {
       position: relative;
       height: 100vh;
-      overflow: hidden;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      text-align: center;
     }
+
     .home video {
       position: absolute;
       top: 0;
@@ -56,168 +58,164 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      z-index: -2;
+    }
+
+    .home .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
       z-index: -1;
-      filter: brightness(0.4);
     }
-    .home .content {
-      text-align: center;
-    }
+
     .home h1 {
-      font-size: 3em;
+      font-size: 3rem;
       color: white;
     }
-    .home p {
-      font-size: 1.2em;
-      color: #f3f3f3;
+
+    section {
+      padding: 100px 20px;
     }
+
     .about {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      background-color: #0a0a0a;
-      text-align: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
     }
+
     .about img {
-      width: 250px;
-      height: 350px;
-      object-fit: cover;
-      border-radius: 20px;
-      margin-bottom: 30px;
-      border: 3px solid crimson;
-    }
-    .about h2 {
-      color: crimson;
-      margin-bottom: 10px;
-    }
-    .about p {
-      max-width: 600px;
-      font-size: 1em;
-      color: #ccc;
-    }
-    .pricing {
-      background-color: #111;
-      color: white;
-      text-align: center;
-    }
-    .pricing h2 {
-      color: crimson;
-    }
-    .pricing p {
-      color: #ddd;
-      max-width: 600px;
-      margin: auto;
-    }
-    .gallery {
-      background-color: #000;
-      overflow-x: scroll;
-      white-space: nowrap;
-      padding: 40px 10px;
-    }
-    .gallery img {
       width: 300px;
-      height: 200px;
+      height: auto;
       object-fit: cover;
-      margin: 0 10px;
-      border-radius: 10px;
-      display: inline-block;
-      transition: transform 0.3s;
     }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-    .cta {
-      background-color: #0d0d0d;
-      color: white;
-      padding: 80px 20px;
-    }
-    .cta h2 {
+
+    .session {
       text-align: center;
-      color: crimson;
     }
-    form {
-      max-width: 600px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr;
+
+    .gallery-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
       gap: 20px;
+      padding: 20px;
     }
+
+    .gallery-container img {
+      width: 300px;
+      scroll-snap-align: center;
+      transition: transform 0.3s, filter 0.3s;
+      filter: blur(3px);
+      transform: scale(0.9);
+    }
+
+    .gallery-container img.active {
+      filter: none;
+      transform: scale(1.1);
+      z-index: 2;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
     input, textarea {
-      padding: 15px;
-      background-color: #1a1a1a;
-      border: 1px solid crimson;
-      color: white;
-      border-radius: 8px;
-    }
-    button {
-      background-color: crimson;
+      background: transparent;
       border: none;
-      padding: 15px;
-      color: white;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
+      border-bottom: 2px solid var(--accent);
+      padding: 10px;
+      color: var(--text-light);
     }
-    button:hover {
-      background-color: #c00;
-    }
-    @media (min-width: 768px) {
-      .about {
-        flex-direction: row;
-        text-align: left;
-        justify-content: center;
-        gap: 50px;
-      }
-      .about p {
-        margin-top: 0;
-      }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-bottom: 2px solid white;
     }
   </style>
 </head>
 <body>
   <nav>
     <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#pricing">Sessions</a>
+    <a href="#about">About Me</a>
+    <a href="#session">Sessions</a>
     <a href="#gallery">Gallery</a>
-    <a href="#cta">Contact</a>
-  </nav>  <section class="home" id="home">
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="home" id="home">
     <video autoplay muted loop>
-      <source src="https://cdn.coverr.co/videos/coverr-golden-sunset-9992/1080p.mp4" type="video/mp4">
+      <source src="https://cdn.coverr.co/videos/coverr-a-blonde-model-posing-5421/1080p.mp4" type="video/mp4">
     </video>
-    <div class="content" data-aos="fade-up">
+    <div class="overlay"></div>
+    <div>
       <h1>The Goddess Xperience</h1>
       <p>Awaken. Submit. Transcend.</p>
     </div>
-  </section>  <section class="about" id="about">
-    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Goddess portrait" data-aos="fade-right">
-    <div data-aos="fade-left">
+  </section>
+
+  <section class="about" id="about" data-aos="fade-up">
+    <img src="https://i.ibb.co/QJtHdGc/femdom-model.png" alt="Goddess">
+    <div>
       <h2>About Me</h2>
-      <p>I am the embodiment of divine feminine power. Through sensual domination and mindful control, I guide your descent into blissful surrender. Every moment with me is a ritual of worship and release.</p>
+      <p>I am the experience your soul has always yearned for. A blend of dominance, elegance, and transcendence that lingers long after your session ends.</p>
     </div>
-  </section>  <section class="pricing" id="pricing">
-    <h2 data-aos="zoom-in">Session Costing</h2>
-    <p data-aos="fade-up">
-      <strong>Basic:</strong> $100/session – For those curious to begin the path.<br>
-      <strong>Premium:</strong> $250/session – Tailored ritual of control and surrender.<br>
-      <strong>Elite:</strong> $500/session – Total immersion, no boundaries.
-    </p>
-  </section>  <section class="gallery" id="gallery">
-    <img src="https://picsum.photos/id/1015/300/200" alt="gallery1" data-aos="fade-up">
-    <img src="https://picsum.photos/id/1016/300/200" alt="gallery2" data-aos="fade-up">
-    <img src="https://picsum.photos/id/1018/300/200" alt="gallery3" data-aos="fade-up">
-    <img src="https://picsum.photos/id/1019/300/200" alt="gallery4" data-aos="fade-up">
-    <img src="https://picsum.photos/id/1020/300/200" alt="gallery5" data-aos="fade-up">
-  </section>  <section class="cta" id="cta">
-    <h2 data-aos="fade-down">Enter the Temple</h2>
-    <form data-aos="fade-up">
-      <input type="text" placeholder="Name" required>
+  </section>
+
+  <section class="session" id="session" data-aos="fade-up">
+    <h2>Session Costing</h2>
+    <p>1 hour - Tribute 5000 INR<br>2 hours - Tribute 9000 INR<br>Online text session - Tribute 2000 INR</p>
+  </section>
+
+  <section class="gallery" id="gallery" data-aos="fade-up">
+    <h2 style="text-align:center;">Gallery</h2>
+    <div class="gallery-container">
+      <img src="https://i.ibb.co/8c2FvK0/gallery1.jpg" alt="1">
+      <img src="https://i.ibb.co/YLs7Nsf/gallery2.jpg" alt="2">
+      <img src="https://i.ibb.co/sV1vY0k/gallery3.jpg" alt="3">
+      <img src="https://i.ibb.co/ZX0LBhz/gallery4.jpg" alt="4">
+    </div>
+  </section>
+
+  <section class="contact" id="contact" data-aos="fade-up">
+    <h2 style="text-align:center;">Book Your Session</h2>
+    <form>
+      <input type="text" placeholder="Your Name">
       <input type="text" placeholder="Fetlife ID">
       <input type="text" placeholder="Twitter ID">
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Your desires, questions or requests..."></textarea>
-      <button type="submit">Submit</button>
+      <input type="email" placeholder="Email">
+      <textarea placeholder="Your message or query..."></textarea>
     </form>
-  </section>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
     AOS.init();
-  </script></body>
+    const gallery = document.querySelector('.gallery-container');
+    const images = gallery.querySelectorAll('img');
+
+    function updateGallery() {
+      const center = gallery.scrollLeft + gallery.offsetWidth / 2;
+      images.forEach(img => {
+        const imgCenter = img.offsetLeft + img.offsetWidth / 2;
+        if (Math.abs(center - imgCenter) < img.offsetWidth / 2) {
+          img.classList.add('active');
+        } else {
+          img.classList.remove('active');
+        }
+      });
+    }
+
+    gallery.addEventListener('scroll', updateGallery);
+    window.addEventListener('load', updateGallery);
+  </script>
+</body>
 </html>
